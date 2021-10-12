@@ -1,0 +1,16 @@
+<template>
+    <lightning-card  title="Submit For Approval">
+        <lightning-button label="Submit" slot="actions" onclick={wireSubmitRecordsForApproval}></lightning-button>  
+    <div style="height: 300px;">
+        <lightning-datatable
+                key-field="accountId"
+                data={data}
+                show-row-number-column
+                row-number-offset={rowOffset}
+                suppress-bottom-bar
+                columns={columns}
+                onrowselection={getSelectedRecord}>
+        </lightning-datatable>
+    </div>
+</lightning-card>
+</template>

@@ -1,0 +1,25 @@
+<template>
+  <div class="body">
+  <div class="main">
+    <template if:true={sessionsList}>
+     <template for:each={sessionsList} for:item="sessionVal">
+      <div class="p" key={sessionVal.sessionRecord.Id}>
+                          <div class="flip-card">
+                              <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                  <h2 class='titleOfSession'>{sessionVal.sessionRecord.Subject__c}</h2>
+                                </div>
+                                <div class="flip-card-back">
+                                  <h2 class='dateofSession'>{sessionVal.sessionRecord.Date_Of_Session__c}</h2>
+                                  <button class='button pptButton'>{sessionVal.sessionRecord.Name} PPT Slide</button><br/>
+                                  <button class='button videoButton'>{sessionVal.sessionRecord.Name} Video Recording</button>
+                                </div>
+                              </div>
+                            </div>
+        
+                          </div>
+     </template>
+    </template>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="contactListController">
+    <aura:attribute Name="createContact" type="Contact" default="{sObjectName:'Contact',
+                                                                 FirstName:'',
+                                                                 LastName:'',
+                                                                 Email:'',
+                                                                 Phone:''
+                                                                 }"/>
+    <aura:attribute name="errorMsg" type="string"/>
+    {!v.errorMsg}
+    <lightning:input name="First Name" aura:id="contactFields" type="text" messageWhenBadInput ="Please Enter First Name" value="{!v.createContact.FirstName}" required="true"/>
+    <lightning:input name="Last Name" aura:id="contactFields" type="text" messageWhenBadInput ="Please Enter Last Name" value="{!v.createContact.LastName}" required="true"/>
+    <lightning:input name="Email" aura:id="contactFields" type="email" value="{!v.createContact.Email}" required="true"/>
+    <lightning:input name="Phone" aura:id="contactFields" type="phone" value="{!v.createContact.Phone}" required="true"/>
+    <lightning:button label="Create Contact" title="Create Contact" onclick="{! c.handleCreateContact }" />
+	
+</aura:component>

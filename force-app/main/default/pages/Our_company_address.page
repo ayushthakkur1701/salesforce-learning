@@ -1,0 +1,15 @@
+<apex:page standardController="FAQ__kav" sidebar="false" >
+    <apex:stylesheet value="{!URLFOR($Resource.materialcss)}"/>
+
+    <knowledge:articleCaseToolbar rendered="{!$CurrentPage.parameters.caseId != null}"
+        caseId="{!$CurrentPage.parameters.caseId}"
+        articleId="{!$CurrentPage.parameters.id}" />
+  
+
+  <div class="card-panel cyan pulse">
+    <span class="blue-text text-darken-2"><h5>{!FAQ__kav.Title}</h5></span>
+  </div>
+  <div class="card-panel cyan pulse">
+    <span class="blue-text text-darken-2"><h6>{!FAQ__kav.Summary}</h6></span>
+  </div>
+ </apex:page>

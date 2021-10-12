@@ -1,0 +1,26 @@
+<aura:component controller="contactListController" implements="force:hasRecordId,flexipage:availableForAllPageTypes">
+    <aura:attribute name="contactList" type="Contact[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doContactList}"/>
+    <div>
+        <c.quickContact/>
+    </div>
+    <div>
+       <div class="slds-grid slds-wrap">
+    	<aura:iteration items="{!v.contactList}" var="con">
+        <div class="slds-col slds-size_1-of-3 slds-p-around_xx-small">
+        <lightning:card footer="{!con.Email}" title="{!con.LastName}" iconName="standard:contact">
+        
+            <aura:set attribute="actions">
+            <lightning:button label="View Contact"/>
+        </aura:set>
+        <div class="slds-p-around_small">
+        First Name: {!con.FirstName} &nbsp;<br/> Last Name: {!con.LastName} <br/>
+        Email: {!con.Email}<br/> Phone: {!con.Phone} <br/>
+            </div>
+    	</lightning:card>
+       </div>
+    </aura:iteration>
+     </div>
+    </div>
+    
+</aura:component>

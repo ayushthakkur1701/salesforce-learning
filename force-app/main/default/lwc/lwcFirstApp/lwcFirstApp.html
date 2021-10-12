@@ -1,0 +1,24 @@
+<template>
+    <div>
+    
+        <lightning-input type="search" onchange={handleKeyChange} class="slds-m-bottom_small" label="Search"></lightning-input>
+        <div>
+            <template if:true={accounts}>
+                <template for:each={accounts} for:item="acc">
+                    <c-account-card key={acc.id} account={acc}></c-account-card>
+                </template>
+            </template>
+        </div>
+        <div>
+            {listOfRecords}</br>
+            {data}
+            <lightning-datatable
+            key-field="id"
+            data={listOfRecords}
+            columns={columns}>
+    </lightning-datatable>   
+         
+        
+        </div>
+    </div>
+</template>
