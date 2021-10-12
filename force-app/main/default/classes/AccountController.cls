@@ -1,6 +1,7 @@
 public class AccountController {
 
 //Added a comment to test CICD
+// New comment to test CI
   static string CS_NAME='Configuration';
 
   public static List<Account> getAllActiveAccounts() {
